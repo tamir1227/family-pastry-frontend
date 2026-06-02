@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Family Pastry — дулаан өнгөний систем */
+  --fp-primary:       #C17A2E;
+  --fp-primary-light: #F5E6CC;
+  --fp-primary-dark:  #8B5219;
+  --fp-cream:         #FDF8F0;
+  --fp-surface:       #FFFDF8;
+  --fp-text:          #2C1A0E;
+  --fp-text-muted:    #8B6F4E;
+  --fp-border:        #E8D5B4;
+  --fp-badge-bg:      #FEF3DC;
+  --fp-badge-text:    #8B5219;
+
+  /* shadcn override — дулаан тон */
+  --background:        #FDF8F0;
+  --foreground:        #2C1A0E;
+  --card:              #FFFDF8;
+  --card-foreground:   #2C1A0E;
+  --primary:           #C17A2E;
+  --primary-foreground:#FFFFFF;
+  --secondary:         #F5E6CC;
+  --secondary-foreground: #8B5219;
+  --muted:             #F0E8D8;
+  --muted-foreground:  #8B6F4E;
+  --accent:            #F5E6CC;
+  --accent-foreground: #8B5219;
+  --border:            #E8D5B4;
+  --input:             #E8D5B4;
+  --ring:              #C17A2E;
+  --destructive:       #DC2626;
+}
