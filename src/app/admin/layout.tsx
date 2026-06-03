@@ -44,8 +44,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           display: 'flex',
           flexDirection: 'column',
           position: 'fixed',
-          top: 0,
-          left: 0,
+          top: 0, left: 0,
           height: '100vh',
         }}
       >
@@ -65,14 +64,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               key={item.href}
               href={item.href}
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                padding: '9px 12px',
-                borderRadius: '8px',
-                marginBottom: '2px',
-                textDecoration: 'none',
-                fontSize: '13px',
+                display: 'flex', alignItems: 'center', gap: '10px',
+                padding: '9px 12px', borderRadius: '8px', marginBottom: '2px',
+                textDecoration: 'none', fontSize: '13px',
                 fontWeight: isActive(item.href) ? '500' : '400',
                 color: isActive(item.href) ? 'var(--fp-primary-dark)' : 'var(--fp-text-muted)',
                 background: isActive(item.href) ? 'var(--fp-primary-light)' : 'transparent',
@@ -84,18 +78,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           ))}
         </nav>
 
+        {/* Зөвхөн нэр + гарах товч — Shop товч байхгүй */}
         <div style={{ padding: '1rem', borderTop: '0.5px solid var(--fp-border)' }}>
           <p style={{ fontSize: '12px', color: 'var(--fp-text-muted)', marginBottom: '8px' }}>
             {user?.firstName} {user?.lastName}
           </p>
-          <div style={{ display: 'flex', gap: '6px' }}>
-            <Link href="/shop" style={{ flex: 1, padding: '7px', border: '0.5px solid var(--fp-border)', borderRadius: '7px', fontSize: '12px', color: 'var(--fp-text-muted)', textDecoration: 'none', textAlign: 'center' }}>
-              Shop
-            </Link>
-            <button onClick={handleLogout} style={{ flex: 1, padding: '7px', border: 'none', borderRadius: '7px', fontSize: '12px', color: 'white', background: 'var(--fp-primary)', cursor: 'pointer' }}>
-              Гарах
-            </button>
-          </div>
+          <button
+            onClick={handleLogout}
+            style={{
+              width: '100%', padding: '8px',
+              border: 'none', borderRadius: '7px',
+              fontSize: '13px', color: 'white',
+              background: 'var(--fp-primary)', cursor: 'pointer',
+            }}
+          >
+            Гарах
+          </button>
         </div>
       </aside>
 

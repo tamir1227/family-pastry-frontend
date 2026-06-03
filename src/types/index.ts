@@ -59,19 +59,22 @@ export type OrderStatus =
   | 'DELIVERED'
   | 'CANCELLED';
 
-export interface Order {
+export interface Product {
   id: string;
-  orderNumber: string;
-  orderType: 'B2C' | 'B2B';
-  status: OrderStatus;
-  deliveryDate: string;
-  deliveryAddress: string | null;
-  subtotal: string;
-  totalAmount: string;
-  paymentStatus: 'UNPAID' | 'PAID' | 'CREDIT';
-  notes: string | null;
-  createdAt: string;
-  items: OrderItem[];
+  name: string;
+  slug: string;
+  description: string | null;
+  imageUrl: string | null;
+  categoryId: string;
+  category: {
+    name: string;
+    imageEmoji: string;
+  };
+  price: number;
+  retailPrice?: number;
+  priceType: 'retail' | 'wholesale' | 'custom';
+  unit: string;
+  dailyCapacity: number | null;
 }
 
 export interface CartItem {

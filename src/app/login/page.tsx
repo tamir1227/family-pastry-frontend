@@ -17,7 +17,8 @@ export default function LoginPage() {
     try {
       await login(email, password);
       toast.success('Амжилттай нэвтэрлээ!');
-      router.push('/shop');
+      router.push('/');
+
     } catch (err: unknown) {
       const axiosErr = err as { response?: { data?: { message?: string } } };
       toast.error(axiosErr.response?.data?.message ?? 'Нэвтрэхэд алдаа гарлаа');
